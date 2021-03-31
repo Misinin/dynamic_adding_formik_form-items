@@ -1,0 +1,12 @@
+{
+  "allowJs": true,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/styles/*": ["styles/*"],
+      "@/components/*": ["components/*"],
+      "@/shared/*": ["shared/*"],
+      "@/utils/*": ["utils/*"]
+    }
+  }
+}
