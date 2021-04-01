@@ -15,7 +15,8 @@ const FormView = (props) => {
       placeholder: "",
       value: values.input,
       required: true,
-      onChange: handleChange,
+      onChange: (evt) =>
+        setFieldValue(`formParts[${index}].input`, evt.target.value),
     },
     {
       type: FIELD_TYPES.number,
@@ -23,24 +24,26 @@ const FormView = (props) => {
       label: "Input number",
       placeholder: "",
       value: values.number,
-      onChange: handleChange,
+      onChange: (evt) =>
+        setFieldValue(`formParts[${index}].number`, evt.target.value),
     },
-    {
-      type: FIELD_TYPES.select,
-      name: "select",
-      label: "Select",
-      placeholder: "",
-      value: values.select,
-      allowClear: true,
-      options: [
-        { value: "value1", label: "value1" },
-        { value: "value2", label: "value2" },
-        { value: "value3", label: "value3" },
-      ],
-      onChange(fieldValue) {
-        setFieldValue(this.name, fieldValue);
-      },
-    },
+    // Требуется подумать над onChange
+    // {
+    //   type: FIELD_TYPES.select,
+    //   name: "select",
+    //   label: "Select",
+    //   placeholder: "",
+    //   value: values.select,
+    //   allowClear: true,
+    //   options: [
+    //     { value: "value1", label: "value1" },
+    //     { value: "value2", label: "value2" },
+    //     { value: "value3", label: "value3" },
+    //   ],
+    //   onChange(fieldValue) {
+    //     setFieldValue(this.name, fieldValue);
+    //   },
+    // },
   ];
 
   const { formItems } = useFormItems({ config });

@@ -35,7 +35,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Configured formik form</h1>
         <div className={styles.form}>
-          <Form layout="vertical">
+          <Form name="dynamic">
             <DynamicForm
               values={values}
               handleChange={handleChange}
